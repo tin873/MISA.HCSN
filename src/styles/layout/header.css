@@ -1,0 +1,81 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+
+/*left*/
+
+.header-left {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 16px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.parent-section {
+    color: #16b2fe;
+}
+
+
+/*right*/
+
+.header-right {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.header-right-item {
+    display: flex;
+    line-height: 60px;
+    margin: 0 10px;
+    font-weight: bolder;
+}
+
+.hover-pointer {
+    cursor: pointer;
+}
+
+.notification {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: #00abfe;
+    color: white;
+    right: 2px;
+    border-radius: 50%;
+    top: 2px;
+    line-height: 12px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.header-right-user {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px 0 6px;
+}
+
+.avatar-persion {
+    background-image: url('../../assets/Icon/avatar-default.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}

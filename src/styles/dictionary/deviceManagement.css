@@ -1,0 +1,60 @@
+.features-pane{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 10px 0;
+    padding-right: 10px;
+}
+.features-pane-left{
+    display: flex;
+    align-items: center;
+}
+
+.features-pane-item {
+    margin: 0px 5px;
+  }
+
+.no-border-left {
+    border-left: none;
+}
+
+.no-border-right {
+    border-right: none;
+}
+
+.features-box {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+.ctx-menu {
+    font-size: 14px;
+    box-shadow: 2px 2px 4px grey;
+    display: none;
+}
+.ctx-menu-item {
+    padding: 8px 34px 8px 18px;
+}
+.ctx-menu-item:hover{
+    background-color: #eaeaea;
+      cursor: pointer;
+}
+/*Gias tien cuoi table*/
+.table-summary {
+    font-size: 14px;
+    font-family: GoogleSans-Medium;
+    display: flex;
+    position: relative;
+    margin: 18px 16px 0 16px;
+    height: 45px;
+}
+.price-number {
+    position: absolute;
+    /*TODO sẽ phải sửa lại cái này cho chuẩn với cột nguyên giá*/
+    right: 120px;
+}
+
+.table-summary .summary {
+    height: 100%;
+    width: 100%;
+  }

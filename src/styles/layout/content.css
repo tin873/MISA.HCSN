@@ -1,0 +1,9 @@
+.content {
+    position: absolute;
+    top: 61px;
+    left: 11.01%;
+    width: 87.25%;
+    height: calc(100% - 77px);
+    padding: 16px 16px 0 16px;
+    z-index: 1;
+}

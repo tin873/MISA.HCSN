@@ -1,0 +1,22 @@
+.input-search {
+    width: 200px;
+    padding: 8px 46px 8px 16px;
+    border: 1px solid #bbbbbb;
+}
+
+.features-pane input{
+    height: 34px;
+    width: 320px;
+    box-sizing: border-box;
+}
+
+.features-pane input:focus{
+    outline: none;
+    border: 1px solid #011239;
+}
+
+.features-pane-right {
+    position: absolute;
+    right: 0;
+    display: flex;
+}

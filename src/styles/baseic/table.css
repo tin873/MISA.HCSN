@@ -1,0 +1,72 @@
+.content-grid {
+    margin: 16px 16px 16px 16px;
+    height: calc(100% - 149px);
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+table thead tr th {
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #1d3464;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    user-select: none;
+}
+
+table tbody tr td {
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 14px;
+    white-space: nowrap;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table thead tr th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+th,
+td {
+    padding: 8px 10px 8px 16px;
+}
+
+tbody tr:hover,
+tbody tr:focus {
+    /*background-color: #f0f8ff6b;*/
+    background-color: #ccd0d46b;
+}
+
+tbody tr.active {
+    /*background-color: #f0f8ff;*/
+    background-color: #dde6ef;
+}
+
+tbody tr:hover .features-box {
+    visibility: visible;
+}
+
+.table-asset td:last-child {
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.table-icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+}
+.table-icon :hover{
+    cursor: pointer;
+}
+
+/*********** scrollable table ************/
