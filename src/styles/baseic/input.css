@@ -4,13 +4,14 @@
     border: 1px solid #bbbbbb;
 }
 
-.features-pane input{
+.features-pane input {
     height: 34px;
     width: 320px;
     box-sizing: border-box;
+    margin-left: 15px;
 }
 
-.features-pane input:focus{
+.features-pane input:focus {
     outline: none;
     border: 1px solid #011239;
 }
@@ -19,6 +20,7 @@
     position: absolute;
     right: 0;
     display: flex;
+    margin-right: 15px;
 }
 
 .input-field .input-black {

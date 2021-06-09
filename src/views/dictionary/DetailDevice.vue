@@ -14,15 +14,13 @@
         <div class="content-detail">
           <div class="input-field">
             <label for="">Mã tài sản (<span>*</span>)</label>
-            <input
-              id="assetInput1"
-              type="text"
-              maxlength="20"
-              class="input-one-third"
-              v-model="assets.assetCode"
-              @keyup="validateAssetCode()"
-              @blur="validateAssetCode()" 
-            />
+             <div class="combobox-model">
+                <select>
+                  <option>mã tài sản 1</option>
+                  <option>mã tài sản 2</option>
+                  <option>mã tài sản 3</option>
+                </select>
+            </div>
 
             <div id="assetInput1_warning" class="validate-warning">
               Thông tin bắt buộc
@@ -33,7 +31,7 @@
             <input
               id="assetInput2"
               maxlength="255"
-              class="input-two-third"
+              class="input-two-third input-black"
               type="text"
               @keyup="validateAssetName()"
               @blur="validateAssetName()"
@@ -47,14 +45,13 @@
           <div class="clear-float"></div>
           <div class="input-field">
             <label>Mã phòng ban</label>
-            <v-autocomplete
-              id="assetInput3"
-              class="custom-autocomplete input-one-third"
-              :items="listDepartment"
-              item-value="departmentId"
-              item-text="departmentCode"
-              v-model="assets.departmentId"
-            ></v-autocomplete>
+            <div class="combobox-model">
+                <select>
+                  <option>mã phòng ban 1</option>
+                  <option>mã phòng ban 2</option>
+                  <option>mã phòng ban 3</option>
+                </select>
+            </div>
           </div>
           <div class="input-field">
             <label for="">Tên phòng ban</label>
@@ -69,14 +66,13 @@
           <div class="clear-float"></div>
           <div class="input-field">
             <label for="">Mã loại tài sản</label>
-            <v-autocomplete
-              id="assetInput4"
-              class="custom-autocomplete input-one-third"
-              :items="listAssetType"
-              item-value="assetTypeId"
-              item-text="assetTypeCode"
-              v-model="assets.assetTypeId"
-            ></v-autocomplete>
+            <div class="combobox-model">
+                <select>
+                  <option>mã tài sản 1</option>
+                  <option>mã tài sản 2</option>
+                  <option>mã tài sản 3</option>
+                </select>
+            </div>
           </div>
           <div class="input-field">
             <label for="">Tên loại tài sản</label>
@@ -90,12 +86,25 @@
           </div>
           <div class="clear-float"></div>
           <div class="input-field">
+            <label for="">Ngày ghi tăng</label>
+            <input
+              id="assetInput"
+              class="input-one-third"
+              type="date"
+              placeholder="_ _/ _ _/ _ _ _ _"
+              name=""
+              @keypress="formatNumber($event)"
+              v-model="assets.no"
+            />
+          </div>
+          <div class="input-field">
             <label for="">Thời gian sử dụng (năm)</label>
             <input
               id="assetInput5"
               class="input-one-third"
               type="text"
               name=""
+              format="dd/mm/yy"
               @keypress="formatNumber($event)"
               v-model="assets.timeUse"
             />

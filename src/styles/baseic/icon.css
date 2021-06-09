@@ -100,7 +100,7 @@
     height: 30px;
 }
 
-.icon-refresh{
+.icon-refresh {
     background-image: url('../../assets/Icon/refresh.svg');
     background-repeat: no-repeat;
     background-size: 20px 20px;
@@ -109,7 +109,7 @@
     height: 38px;
 }
 
-.icon-trash{
+.icon-trash {
     background-image: url('../../assets/Icon/trash.svg');
     background-repeat: no-repeat;
     background-size: 20px 20px;

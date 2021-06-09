@@ -17,7 +17,7 @@
     border: none;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }
 
@@ -27,4 +27,14 @@
 
 .btn-help:hover {
     background-color: transparent;
+}
+
+.btn-save {
+    background-color: #00abfe;
+    color: white;
+    padding: 0px 40px 0px 40px;
+}
+
+.btn-cancel {
+    padding: 0px 40px 0px 40px;
 }
