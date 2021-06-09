@@ -138,3 +138,12 @@
     background-size: contain;
     background-position: center;
 }
+
+.icon-cancel {
+    background-image: url("../../assets/Icon/cancel.svg");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+}

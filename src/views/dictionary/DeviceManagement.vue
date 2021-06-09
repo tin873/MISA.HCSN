@@ -13,6 +13,7 @@
           <div class="features-pane-right">
             <div
               class="btn-add-asset btn features-pane-item"
+              @click="showModel()"
             >
               Thêm
             </div>
@@ -139,19 +140,22 @@
       </div>
 
       <div class="table-summary">
-        <div class="summary">
-          <div class="asset-number">Tổng số tài sản: {{ amountAsset }}</div>
-          <div class="price-number">
-            Tổng nguyên giá: {{ totalPrice }}
-          </div>
+        <div class="asset-number">Tổng số tài sản: {{ amountAsset }}</div>
+        <div class="price-number">
+          Tổng nguyên giá: {{ totalPrice }}
         </div>
       </div>
+      <Details v-if="isShow" @closeTab="closeTab" v-bind:title="title" v-bind:assets="assets"/>
     </div>
 </template>
 
 <script>
+import Details from "./DetailDevice.vue";
 export default ({
     name: 'DeviceManagement',
+    components: {
+    Details,
+    },
     data(){
         return{
             listAsset: [
@@ -226,7 +230,20 @@ export default ({
             ],
             amountAsset: 234234,
             totalPrice: 234234,
+            assets:{},
+            title: null,
+            isShow: false,
         }
+    },
+    methods: {
+      showModel() {
+        this.assets = {};
+        this.title = "Thêm thiết bị mới";
+        this.isShow = !this.isShow;
+      },
+      closeTab(){
+        this.isShow = !this.isShow;
+      },
     },
     filters: {
     formatMoney: function (money) {
@@ -238,3 +255,6 @@ export default ({
   },
 })
 </script>
+<style>
+@import '../../styles/dictionary/deviceManagement.css';
+</style>

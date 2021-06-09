@@ -9,7 +9,7 @@
         </div>
         <div class="navbar-content">
             <router-link class="nav-item"
-            to="/"
+            to="/Home"
             active-class="Active">
                 <div class="nav-item-icon nav-item-cpmputer-line"></div>
                 <div class="nav-item-text" :class="{isToggle: isToggle}">Tổng quan</div>
@@ -39,7 +39,7 @@
                 </div>
             </router-link>
             <router-link class="nav-item"
-            to="/"
+            to="d"
             active-class="Active">
                 <div class="nav-item-icon nav-item-common"></div>
                 <div class="nav-item-text" :class="{isToggle: isToggle}">Danh mục</div>
@@ -51,19 +51,19 @@
                 </div>
             </router-link>
             <router-link class="nav-item"
-            to="/"
+            to="s"
             active-class="Active">
                 <div class="nav-item-icon nav-item-search-eye"></div>
                 <div class="nav-item-text" :class="{isToggle: isToggle}">Tra cứu</div>
             </router-link>
             <router-link class="nav-item"
-            to="/"
+            to="a"
             active-class="Active">
                 <div class="nav-item-icon nav-item-setting"></div>
                 <div class="nav-item-text" :class="{isToggle: isToggle}">Hệ thống</div>
             </router-link>
             <router-link class="nav-item"
-            to="/"
+            to="#"
             active-class="Active">
                 <div class="nav-item-icon nav-item-pie-chart-line"></div>
                 <div class="nav-item-text" :class="{isToggle: isToggle}">Báo cáo</div>
@@ -95,8 +95,8 @@ export default {
         display: none;
     }
     .Active{
-        /* background-color: #273557;
-        border-left: 4px solid #00abfe; */
+        background-color: #273557;
+        border-left: 4px solid #00abfe !important; 
     }
     .isZoom{
         width: 3.66% !important;

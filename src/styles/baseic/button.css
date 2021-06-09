@@ -20,3 +20,11 @@
 .btn:hover{
     cursor: pointer;
 }
+
+.btn-help {
+    border: none;
+}
+
+.btn-help:hover {
+    background-color: transparent;
+}

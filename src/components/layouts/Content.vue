@@ -13,7 +13,6 @@ export default {
 
 <style scoped>
 .isToggleContent{
-    background-color: blue !important;
     left: 3.7%;
     width: 94.6%;
 }
