@@ -9,6 +9,12 @@
   table {
     border-spacing: 0;
     width: 100%;
+    overflow-y: scroll;
+    height: 700px;
+    display: block;
+}
+table tbody{
+    width: 100%;
 }
 
 table thead tr th {
@@ -20,13 +26,18 @@ table thead tr th {
     background-color: white;
     user-select: none;
 }
-
+table tbody tr .index{
+    width: 5% !important;
+}
+table tbody tr .function{
+    width: 12% !important;
+}
 table tbody tr td {
     border-right: 1px solid #eaeaea;
     border-bottom: 1px solid #d6d6d6;
     font-size: 14px;
     white-space: nowrap;
-    max-width: 140px;
+    width: 18%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -68,5 +79,6 @@ tbody tr:hover .features-box {
 .table-icon :hover{
     cursor: pointer;
 }
+
 
 /*********** scrollable table ************/

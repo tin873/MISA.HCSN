@@ -7,6 +7,7 @@
               class="input-search icon-search"
               type="text"
               placeholder="Tìm kiếm theo tên, mã tài sản. "
+              @input="onSearch($event.target.value)"
             />
           </div>
 
@@ -91,30 +92,31 @@
             </tr>
           </thead>
 
-          <tbody>
+          <tbody class="scroll-y">
             <tr
-              v-for="(asset, index) in listAsset"
-              :key="asset.assetId"
+              v-for="(asset, index) in list"
+              :key="asset.AssetId"
             >
-              <td class="no-border-left">{{ index + 1 }}</td>
-              <td>{{ asset.assetCode }}</td>
-              <td>{{ asset.assetName }}</td>
-              <td>{{ asset.assetTypeName }}</td>
-              <td>{{ asset.departmentName }}</td>
+              <td class="no-border-left index">{{ index + 1 }}</td>
+              <td>{{ asset.AssetCode }}</td>
+              <td>{{ asset.AssetName }}</td>
+              <td>{{ asset.AssetTypeName }}</td>
+              <td>{{ asset.DepartmentName }}</td>
               <td style="text-align: right">
-                {{ asset.originalPrice }}
+                {{ asset.OriginalPrice }}
               </td>
-              <td class="no-border-right">
+              <td class="no-border-right function">
                 <div class="features-box">
                   <div
                     :id="'tableRow' + index + '_edit'"
                     class="table-icon icon-edit-pen"
                     title="Sửa"
+                    @click="rowClick(asset)"
                   ></div>
                   <div
                     id="preventLeftClick"
                     class="table-icon icon-trash-table"
-                    title="Xóa"
+                    title="Xóa" 
                   ></div>
                   <div
                     class="table-icon icon-refresh-time"
@@ -124,13 +126,7 @@
               </td>
             </tr>
           </tbody>
-          <!-- <div v-if="getSuccess" class="loading-dialog">
-            <div class="icon-loading"></div>
-          </div>
-          <div v-if="!isSuccess" class="loading-dialog-execu">
-            <div class="icon-loading"></div>
-          </div>
-          <div v-if="getEmty" class="loading-emty">Không có dữ liệu</div> -->
+           
         </table>
         <div class="ctx-menu" id="ctxMenu">
           <div class="ctx-menu-item">Thêm</div>
@@ -145,11 +141,19 @@
           Tổng nguyên giá: {{ totalPrice }}
         </div>
       </div>
+       <div v-if="true" class="loading-dialog">
+            <div class="icon-loading"></div>
+          </div>
+          <div v-if="isSuccess" class="loading-dialog-execute">
+            <div class="icon-loading"></div>
+          </div>
+          <div v-if="getEmty" class="loading-emty">Không có dữ liệu</div>
       <Details v-if="isShow" @closeTab="closeTab" v-bind:title="title" v-bind:assets="assets"/>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 import Details from "./DetailDevice.vue";
 export default ({
     name: 'DeviceManagement',
@@ -159,81 +163,19 @@ export default ({
     data(){
         return{
             listAsset: [
-                {
-                  assetId: null,
-                  assetCode: 'edfdf3g',
-                  assetName: 'sdf23fd',
-                  assetTypeId: null,
-                  departmentId: null,
-                  timeUse: null,
-                  wearRate: null,
-                  originalPrice: 23423,
-                  wearValue: null,
-                  isUsed: false,
-                  departmentName: 'sdf23fds',
-                  assetTypeName: 'sdf32fds',
-                  createdBy: null,
-                  modifiedBy: null,
-                  createDate: null,
-                },
-                {
-                  assetId: null,
-                  assetCode: 'edfdf3g',
-                  assetName: 'sdf23fd',
-                  assetTypeId: null,
-                  departmentId: null,
-                  timeUse: null,
-                  wearRate: null,
-                  originalPrice: 23423,
-                  wearValue: null,
-                  isUsed: false,
-                  departmentName: 'sdf23fds',
-                  assetTypeName: 'sdf32fds',
-                  createdBy: null,
-                  modifiedBy: null,
-                  createDate: null,
-                },
-                {
-                  assetId: null,
-                  assetCode: 'edfdf3g',
-                  assetName: 'sdf23fd',
-                  assetTypeId: null,
-                  departmentId: null,
-                  timeUse: null,
-                  wearRate: null,
-                  originalPrice: 23423,
-                  wearValue: null,
-                  isUsed: false,
-                  departmentName: 'sdf23fds',
-                  assetTypeName: 'sdf32fds',
-                  createdBy: null,
-                  modifiedBy: null,
-                  createDate: null,
-                },
-                {
-                  assetId: null,
-                  assetCode: 'edfdf3g',
-                  assetName: 'sdf23fd',
-                  assetTypeId: null,
-                  departmentId: null,
-                  timeUse: null,
-                  wearRate: null,
-                  originalPrice: 23423,
-                  wearValue: null,
-                  isUsed: false,
-                  departmentName: 'sdf23fds',
-                  assetTypeName: 'sdf32fds',
-                  createdBy: null,
-                  modifiedBy: null,
-                  createDate: null,
-                }
             ],
+            list: [],
             amountAsset: 234234,
             totalPrice: 234234,
             assets:{},
             title: null,
             isShow: false,
+            getSuccess: true,
+            isSuccess: true,
         }
+    },
+    created() {
+      this.getAllAsset();
     },
     methods: {
       showModel() {
@@ -243,6 +185,36 @@ export default ({
       },
       closeTab(){
         this.isShow = !this.isShow;
+      },
+      rowClick(asset){
+        this.assets = asset;
+        this.title = "Sửa Thiết bị";
+        this.isShow = !this.isShow;
+      },
+      onSearch(value){
+         if(value == "")
+         {
+           this.list = this.listAsset;
+         }
+         else
+         {
+           this.list = this.listAsset.filter(lists => lists.AssetName.toLowerCase().includes(value.toLowerCase()) || lists.AssetCode.toLowerCase().includes(value.toLowerCase()));
+         }
+        console.log(value);
+      },
+      async getAllAsset(){
+        this.getSuccess = true;
+        await axios.get("https://localhost:44395/api/v1/Assets").then(respon =>{
+          this.listAsset = respon.data.Data;
+          this.list = this.listAsset;
+          this.getSuccess = false;
+        }).catch(error => {
+          console.log(error);
+          setTimeout(() => {
+            this.getSuccess = false; // tắt dialog loading
+          }, 3000);
+        })
+        
       },
     },
     filters: {

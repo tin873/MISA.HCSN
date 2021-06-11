@@ -59,3 +59,35 @@
     height: 100%;
     width: 100%;
   }
+
+  /*loadding*/
+  .loading-dialog {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    top: 34px;
+    background: black;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .loading-dialog .icon-loading {
+    background-image: url("../../assets/Icon/loading.svg");
+    height: 80px;
+    width: 80px;
+    background-size: contain;
+    margin: auto;
+  }
+  .loading-emty {
+    font-weight: bold;
+    width: inherit;
+    display: flex;
+    height: 138px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+  }

@@ -35,7 +35,7 @@
               type="text"
               @keyup="validateAssetName()"
               @blur="validateAssetName()"
-              v-model="assets.assetName"
+              v-model="assets.AssetName"
             />
 
             <div id="assetInput2_warning" class="validate-warning">
@@ -60,7 +60,7 @@
               tabindex="-1"
               type="text"
               name=""
-              v-model="assets.departmentName"
+              v-model="assets.DepartmentName"
             />
           </div>
           <div class="clear-float"></div>
@@ -81,7 +81,7 @@
               tabindex="-1"
               type="text"
               name=""
-              v-model="assets.assetTypeName"
+              v-model="assets.AssetTypeName"
             />
           </div>
           <div class="clear-float"></div>
@@ -94,7 +94,7 @@
               placeholder="_ _/ _ _/ _ _ _ _"
               name=""
               @keypress="formatNumber($event)"
-              v-model="assets.no"
+              v-model="assets.IncreaseDate"
             />
           </div>
           <div class="input-field">
@@ -106,7 +106,7 @@
               name=""
               format="dd/mm/yy"
               @keypress="formatNumber($event)"
-              v-model="assets.timeUse"
+              v-model="assets.TimeUse"
             />
           </div>
           <div class="input-field">
@@ -118,7 +118,7 @@
               type="text"
               name=""
               @keypress="formatNumber($event)"
-              v-model="assets.wearRate"
+              v-model="assets.WearRate"
             />
           </div>
           <div class="input-field">
@@ -146,7 +146,7 @@
               type="text"
               name=""
               @keypress="formatNumber($event)"
-              v-model="assets.wearValue"
+              v-model="assets.WearValue"
             />
           </div>
         </div>
